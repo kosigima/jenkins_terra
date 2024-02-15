@@ -33,7 +33,7 @@ resource "aws_instance" "MK-user4" {
   instance_type = "t3.micro"
   key_name="user4_deployer-key"
   
-  count=1
+  count=4
   tags = {
     Name = "Mk-infra-${count.index}",
     role=count.index==0?"zero":(count.index<3?"lessThan3":"moreThan3")
