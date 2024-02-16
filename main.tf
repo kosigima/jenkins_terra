@@ -36,7 +36,7 @@ resource "aws_instance" "MK-user4" {
   count=4
   tags = {
     Name = "Mk-infra-${count.index}",
-    role=count.index==0?"zero":(count.index<3?"lessThan3":"moreThan3")
+    role=count.index==0?"user4-main":(count.index<3?"user4-web":"user-backend")
   }
 }
 
